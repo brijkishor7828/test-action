@@ -1,0 +1,20 @@
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  send-sms:
+    name: Send SMS
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Sending SMS Notification'
+      uses: cozyvision/smsalert@master
+      with:
+        senderid: ${{ secrets.senderid }}
+        toPhoneNumber: ${{ secrets.toPhoneNumber }}
+        message: 'Hello from github'
+      env:
+        SMSALERT_USERNAME: ${{ secrets.SMSALERT_USERNAME }}
+        SMSALERT_PASSWORD: ${{ secrets.SMSALERT_PASSWORD }}
