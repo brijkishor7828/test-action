@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'Sending SMS Notification'
-      uses: cozyvision/smsalert@master
+      uses: Smsalert/smsalert@master
       with:
         senderid: ${{ secrets.senderid }}
         toPhoneNumber: ${{ secrets.toPhoneNumber }}
