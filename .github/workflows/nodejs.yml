@@ -9,11 +9,17 @@ jobs:
     name: Send SMS
     runs-on: ubuntu-latest
     steps:
-    - name: 'Sending SMS Notification'
-      uses: Smsalert/smsalert@master
+    - name: smsalert
+      uses: SMSAlert/smsalert@1.0.0
       with:
+         # senderid in your SMSAlert account to send the SMS from
         senderid: ${{ secrets.senderid }}
+        # Phone number to send the SMS to
         toPhoneNumber: ${{ secrets.toPhoneNumber }}
-        message: 'Hello from github'
+        # The message you want to send
+        message: 'hello'
+        # A SMSAlert Username. Can alternatively be stored in environment
         SMSALERT_USERNAME: ${{ secrets.SMSALERT_USERNAME }}
+        # A SMSAlert Password. Can alternatively be stored in environment
         SMSALERT_PASSWORD: ${{ secrets.SMSALERT_PASSWORD }}
+
